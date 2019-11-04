@@ -5,13 +5,15 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-@override
+  @override
   State<StatefulWidget> createState() {
     return _MyAppState();
   }
 }
 
-class _MyAppState extends State {
+class _MyAppState extends State<MyApp> {
+  List<String> products = ['Item A', 'Item B', 'Item C', 'Item D', 'Item E'];
+
   @override
   build(BuildContext context) {
     return MaterialApp(
@@ -29,11 +31,15 @@ class _MyAppState extends State {
                 child: Text('Click Me'),
               ),
             ),
-            Card(
-                child: Column(children: <Widget>[
-              Image.asset('assets/rectangles.jpg'),
-              Text('My Image')
-            ]))
+            Column(
+                children: this
+                    .products
+                    .map((element) => Card(
+                            child: Column(children: <Widget>[
+                          Image.asset('assets/rectangles.png'),
+                          Text(element)
+                        ])))
+                    .toList())
           ],
         ),
       ),
