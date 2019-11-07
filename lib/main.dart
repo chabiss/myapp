@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 
 // Main Class
 class _MyAppState extends State<MyApp> {
-  List<String> products = ['Item A', 'Item B', 'Item C', 'Item D', 'Item E'];
+  List<String> products = ['Item A', 'Item B', 'Item C', 'Item D'];
 
   @override
   build(BuildContext context) {
