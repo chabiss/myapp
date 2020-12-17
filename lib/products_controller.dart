@@ -14,6 +14,7 @@ class ProductController extends StatelessWidget {
           width: 200,
           margin: EdgeInsets.all(10),
           child: TextField(
+              onChanged: (String value) {this.productName = value;},
               onSubmitted: (String value) {this.productName = value;},
               decoration: InputDecoration(
         border: OutlineInputBorder(),
